@@ -1,4 +1,9 @@
+package Crypto.src;
+
+import Crypto.src.ROT13;
 import org.junit.Test;
+
+import java.security.InvalidKeyException;
 
 import static org.junit.Assert.*;
 
@@ -49,7 +54,7 @@ public class ROT13Test {
     }
 
     @Test
-    public void cryptTest1() {
+    public void cryptTest1() throws InvalidKeyException {
         // Given
         ROT13 cipher = new ROT13('a', 'n');
 
