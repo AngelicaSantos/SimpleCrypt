@@ -87,7 +87,12 @@ public class ROT13Test {
         System.out.println(Q1);
 
         // When
-        String actual = cipher.crypt(cipher.crypt(Q1));
+        String actual = null;
+        try {
+            actual = cipher.crypt(cipher.crypt(Q1));
+        } catch (InvalidKeyException e) {
+            e.printStackTrace();
+        }
         System.out.println(actual);
         // Then
         assertTrue(actual.equals(Q1));
